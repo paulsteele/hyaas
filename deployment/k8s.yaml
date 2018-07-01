@@ -24,6 +24,7 @@ spec:
     - secretName: hell-yeah.org
       hosts:
         - hell-yeah.org
+        - www.hell-yeah.org
 ---
 apiVersion: v1
 kind: Service
