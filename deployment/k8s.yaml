@@ -12,7 +12,7 @@ spec:
         paths:
           - backend:
               serviceName: hyaas
-              servicePort: 80
+              servicePort: 8080
             path: /
   tls:
     - secretName: hell-yeah.org
@@ -30,8 +30,8 @@ spec:
   ports:
     - name: hyaas
       protocol: TCP
-      port: 80
-      targetPort: 5678
+      port: 8080
+      targetPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -52,9 +52,9 @@ spec:
     spec:
       containers:
         - name: hyaas
-          image: hashicorp/http-echo
+          image: jamesw/http-echo-server
           ports:
             - name: hyaas
-              containerPort: 5678
+              containerPort: 8080
       # imagePullSecrets:
       #   - name: registry.paul-steele.com
