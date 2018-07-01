@@ -28,7 +28,33 @@ spec:
   selector:
     app: hyaas
   ports:
-    - name: hyaas-server
+    - name: hyaas
       protocol: TCP
-      port: 4000
-      targetPort: 4000
+      port: 80
+      targetPort: 5678
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hyaas
+  namespace: deployments
+  labels:
+    app: hyaas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hyaas
+  template:
+    metadata:
+      labels:
+        app: hyaas
+    spec:
+      containers:
+        - name: hyaas
+          image: hashicorp/http-echo
+          ports:
+            - name: hyaas
+              containerPort: 5678
+      # imagePullSecrets:
+      #   - name: registry.paul-steele.com
