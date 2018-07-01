@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: hyaas
+  namespace: deployments
+spec:
+  rules:
+    - host: hell-yeah.org
+      http:
+        paths:
+          - backend:
+              serviceName: hyaas
+              servicePort: 80
+            path: /
+  tls:
+    - secretName: hell-yeah.org
+      hosts:
+        - hell-yeah.org
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hyaas
+  namespace: deployments
+spec:
+  selector:
+    app: hyaas
+  ports:
+    - name: hyaas-server
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
