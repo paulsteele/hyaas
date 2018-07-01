@@ -20,7 +20,7 @@ volumes: [
     //   }
     // }
 
-    // if (gitBranch == "master") {
+    if (gitBranch == "master") {
     //   stage('Push to Registry') {
     //     container('docker') {
     //       withDockerRegistry([credentialsId: 'docker-registry', url: "https://registry.paul-steele.com/"]) {
