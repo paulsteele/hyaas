@@ -14,6 +14,12 @@ spec:
               serviceName: hyaas
               servicePort: 8080
             path: /
+    - host: www.hell-yeah.org
+      http:
+        paths:
+          - backend:
+              serviceName: hyass
+              servicePort: 8080
   tls:
     - secretName: hell-yeah.org
       hosts:
