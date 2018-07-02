@@ -59,9 +59,9 @@ spec:
     spec:
       containers:
         - name: hyaas
-          image: jamesw/http-echo-server
+          image: registry.paul-steele.com/hyaas:latest
           ports:
             - name: hyaas
               containerPort: 8080
-      # imagePullSecrets:
-      #   - name: registry.paul-steele.com
+      imagePullSecrets:
+        - name: registry.paul-steele.com

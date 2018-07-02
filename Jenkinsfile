@@ -14,20 +14,20 @@ volumes: [
     def shortGitCommit = "${gitCommit[0..10]}"
     def previousGitCommit = sh(script: "git rev-parse ${gitCommit}~", returnStdout: true)
 
-    // stage('Build') {
-    //   container('docker') {
-    //     sh "docker build . -t registry.paul-steele.com/hyaas:latest"
-    //   }
-    // }
+    stage('Build') {
+      container('docker') {
+        sh "docker build . -t registry.paul-steele.com/hyaas:latest"
+      }
+    }
 
     if (gitBranch == "master") {
-    //   stage('Push to Registry') {
-    //     container('docker') {
-    //       withDockerRegistry([credentialsId: 'docker-registry', url: "https://registry.paul-steele.com/"]) {
-    //         sh "docker push registry.paul-steele.com/hyaas:latest"
-    //       }
-    //     }
-    //   }
+      stage('Push to Registry') {
+        container('docker') {
+          withDockerRegistry([credentialsId: 'docker-registry', url: "https://registry.paul-steele.com/"]) {
+            sh "docker push registry.paul-steele.com/hyaas:latest"
+          }
+        }
+      }
 
       stage('Deploy') {
         container('kubectl') {

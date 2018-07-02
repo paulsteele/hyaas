@@ -1,3 +1,10 @@
-const val = 10;
+import express from 'express';
 
-console.log(val);
+const server = express();
+
+server.get('/', (req, res) => {
+  res.send('hell yeah');
+});
+
+server.listen(8080);
+console.log('hyaas has started up');
