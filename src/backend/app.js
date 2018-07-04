@@ -2,7 +2,9 @@ import express from 'express';
 
 const server = express();
 
-server.get('/', (req, res) => {
+server.use('/', express.static('dist'));
+
+server.get('/plaintext', (req, res) => {
   res.send('hell yeah');
 });
 
