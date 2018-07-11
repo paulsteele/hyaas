@@ -63,5 +63,6 @@ spec:
           ports:
             - name: hyaas
               containerPort: 8080
+      imagePullPolicy: Always
       imagePullSecrets:
         - name: registry.paul-steele.com
