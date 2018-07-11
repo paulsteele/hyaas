@@ -12,7 +12,7 @@ const serveImage = (callback) => {
     .font('Impact', 150)
     .stroke('black', 4)
     .fill('white')
-    .drawText(35, 240, 'Hell Yeah')
+    .drawText(50, 240, 'Hell Yeah')
     .stream((err, stdout) => {
       callback(stdout);
     });
