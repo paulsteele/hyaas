@@ -1,6 +1,9 @@
 #Base Image
 FROM node:10.5.0-alpine as base
 WORKDIR /hyaas
+
+RUN apk add --update file imagemagick
+
 COPY package.json .
 
 #Builder
