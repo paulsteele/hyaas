@@ -2,7 +2,8 @@
 FROM node:10.5.0-alpine as base
 WORKDIR /hyaas
 
-RUN apk add --update file imagemagick
+RUN apk add --update file imagemagick msttcorefonts-installer fontconfig
+RUN update-ms-fonts && fc-cache -f
 
 COPY package.json .
 
