@@ -7,7 +7,7 @@ const server = express();
 server.use('/', express.static('dist'));
 
 server.get('/plaintext', (req, res) => {
-  res.send('hell yeah');
+  res.send('Hell Yeah');
 });
 
 server.get('/image', (req, res) => {
@@ -16,7 +16,7 @@ server.get('/image', (req, res) => {
     stream.pipe(res);
   };
 
-  serveImage(callback);
+  serveImage(req.query.url, callback);
 });
 
 server.listen(8080);

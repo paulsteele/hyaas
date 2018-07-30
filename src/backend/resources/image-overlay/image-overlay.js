@@ -1,18 +1,22 @@
 import gm from 'gm';
 import request from 'request';
 
+const DEFAULT_IMAGE = 'http://jonvilma.com/images/rainbow-8.jpg';
 
-const serveImage = (callback) => {
-  const im = gm.subClass({ imageMagick: true });
+const serveImage = (requestUrl, callback) => {
+  const imageMagick = gm.subClass({ imageMagick: true });
 
-  const url = 'http://jonvilma.com/images/rainbow-8.jpg';
+  const imageUrl = requestUrl || DEFAULT_IMAGE;
 
-  im(request(url))
-    .resize(700, 700)
-    .font('Impact', 150)
+  const image = request(imageUrl);
+
+  imageMagick(image)
+    .resize(1000, 1000)
+    .font('Impact', 220)
     .stroke('black', 4)
     .fill('white')
-    .drawText(50, 240, 'Hell Yeah')
+    .gravity('Center')
+    .drawText(0, 0, 'Hell Yeah')
     .stream((err, stdout) => {
       callback(stdout);
     });
