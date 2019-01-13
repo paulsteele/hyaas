@@ -11,7 +11,7 @@ const serveImage = (requestUrl, callback) => {
   const image = request(imageUrl);
 
   imageMagick(image)
-    .resize(1000, 1000)
+    .resize(1500, 1500)
     .font('Impact', 220)
     .stroke('black', 4)
     .fill('white')

@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
         - name: hyaas
-          image: registry.paul-steele.com/hyaas:latest
+          image: registry.paul-steele.com/hyaas:$BUILD_TAG
           ports:
             - name: hyaas
               containerPort: 8080

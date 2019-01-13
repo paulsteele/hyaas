@@ -45,12 +45,18 @@ class BasePage extends React.PureComponent {
           src={imageUrl}
           alt={title}
         />
-        <input
-          className="text-input"
-          type="text"
-          value={textboxContents}
-          onChange={this.setTextBox}
-        />
+        <div className="text-field-container">
+          <label htmlFor="base-image-field" className="text-label">
+            Enter base image URL:
+            <input
+              id="base-image-field"
+              className="text-input"
+              type="text"
+              value={textboxContents}
+              onChange={this.setTextBox}
+            />
+          </label>
+        </div>
         <button
           className="button-input"
           type="button"

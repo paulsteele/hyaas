@@ -1,6 +1,6 @@
 {
   "name": "hyaas",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "hell yeah as a service",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/paulsteele/hyaas#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
@@ -40,7 +41,8 @@
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.10.0",
-    "parcel-bundler": "^1.9.4"
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.16.0"
   },
   "dependencies": {
     "axios": "^0.18.0",
