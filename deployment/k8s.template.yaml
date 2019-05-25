@@ -4,7 +4,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
   name: hyaas
-  namespace: default
+  namespace: deployments
 spec:
   rules:
     - host: hell-yeah.org
@@ -30,7 +30,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hyaas
-  namespace: default
+  namespace: deployments
 spec:
   selector:
     app: hyaas
@@ -44,7 +44,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hyaas
-  namespace: default
+  namespace: deployments
   labels:
     app: hyaas
 spec:
