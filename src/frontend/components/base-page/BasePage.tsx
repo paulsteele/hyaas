@@ -1,11 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 import axios from 'axios';
 
 import './basePage.scss';
 
-class BasePage extends React.PureComponent {
-  constructor() {
-    super();
+type MyProps = {};
+
+type MyState = {
+  title: string,
+  imageUrl: string,
+  textboxContents: string
+};
+
+class BasePage extends React.PureComponent<MyProps, MyState> {
+  constructor(props: MyProps) {
+    super(props);
     this.state = {
       title: 'Loading',
       imageUrl: '/image',
@@ -25,8 +33,9 @@ class BasePage extends React.PureComponent {
       .then((res => (this.setState(() => ({ title: res.data })))));
   }
 
-  setTextBox = (event) => {
-    const val = event.target.value;
+  setTextBox = (event: React.SyntheticEvent) => {
+    const target = event.target as HTMLInputElement;
+    const val = target.value;
     this.setState(() => ({ textboxContents: val }));
   }
 

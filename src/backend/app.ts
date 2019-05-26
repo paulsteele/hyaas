@@ -1,6 +1,6 @@
-import express from 'express';
+import * as express from 'express';
 
-import serveImage from './resources/image-overlay/image-overlay';
+import imageOverlay from './resources/image-overlay/image-overlay';
 
 const server = express();
 
@@ -11,12 +11,12 @@ server.get('/plaintext', (req, res) => {
 });
 
 server.get('/image', (req, res) => {
-  const callback = (stream) => {
+  const callback = (stream: NodeJS.ReadWriteStream) => {
     res.contentType('jpeg');
     stream.pipe(res);
   };
 
-  serveImage(req.query.url, callback);
+  imageOverlay(req.query.url, callback);
 });
 
 server.listen(8080);

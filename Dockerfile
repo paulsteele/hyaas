@@ -23,5 +23,6 @@ RUN npm run lint
 FROM base as release 
 COPY --from=builder /hyaas/prod_node_modules ./node_modules
 COPY --from=builder /hyaas/dist ./dist
+COPY --from=builder /hyaas/assets ./assets
 
 ENTRYPOINT [ "node", "dist/app.js" ]
