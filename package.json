@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/paulsteele/hyaas#readme",
   "devDependencies": {
-    "@types/express": "^4.16.0",
+    "@types/express": "^4.17.0",
     "@types/gm": "^1.18.3",
     "@types/jest": "^24.0.13",
     "@types/react": "^16.8.19",
