@@ -8,9 +8,9 @@ properties([
 ])
 
 podTemplate(label: label, serviceAccount: 'deployments', containers: [
-  containerTemplate(name: 'docker', image: 'docker', command: 'cat', ttyEnabled: true),
+  containerTemplate(name: 'docker', image: 'docker:18.09-dind', command: 'cat', ttyEnabled: true),
   containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.15.0', command: 'cat', ttyEnabled: true),
-   containerTemplate(name: 'envsubst', image: 'loicmahieu/alpine-envsubst', command: 'cat', ttyEnabled: true)
+  containerTemplate(name: 'envsubst', image: 'loicmahieu/alpine-envsubst', command: 'cat', ttyEnabled: true)
 ],
 volumes: [
   hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')

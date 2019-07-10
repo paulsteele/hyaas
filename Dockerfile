@@ -1,11 +1,9 @@
 #Base Image
-FROM node:12-alpine as base
+FROM node:11-alpine as base
 WORKDIR /hyaas
 
 RUN apk add --update file imagemagick msttcorefonts-installer fontconfig
 RUN update-ms-fonts && fc-cache -f
-RUN npm cache clean --force
-RUN npm i npm@4.6.1 -g
 
 COPY package.json .
 
