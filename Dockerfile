@@ -2,24 +2,22 @@
 FROM node:12-alpine as base
 WORKDIR /hyaas
 
-RUN apk add --update file imagemagick msttcorefonts-installer fontconfig
+RUN apk add --update file imagemagick msttcorefonts-installer fontconfig yarn
 RUN update-ms-fonts && fc-cache -f
-RUN npm cache clean --force
-RUN npm i npm@4.6.1 -g
 
 COPY package.json .
 
 #Builder
 FROM base as builder 
-RUN npm install --only=production
+RUN yarn install --production
 RUN cp -r node_modules prod_node_modules
-RUN npm install
+RUN yarn install
 COPY . .
-RUN npm run build 
+RUN yarn run build 
 
 #Test Image
 FROM builder as test 
-RUN npm run lint
+RUN yarn run lint
 
 #Release
 FROM base as release 
