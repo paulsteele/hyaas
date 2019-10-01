@@ -46,7 +46,7 @@
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "ts-node-dev": "^1.0.0-pre.40",
+    "ts-node-dev": "^1.0.0-pre.43",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.17.0",
