@@ -1005,10 +1005,10 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/gm@^1.18.5":
-  version "1.18.5"
-  resolved "https://registry.yarnpkg.com/@types/gm/-/gm-1.18.5.tgz#6d4bd1a5d2ef2df530c48eea5d9e4330a37dd479"
-  integrity sha512-U+8VAmasjinN8g4iO9iSo1tMwuQZARXZ7wxR4Vq9S004MC/lBgdjGa7Wj9ptaTcSK5gU6YjmxseEcMEx8RM8wA==
+"@types/gm@^1.18.7":
+  version "1.18.7"
+  resolved "https://registry.yarnpkg.com/@types/gm/-/gm-1.18.7.tgz#03a90d5140496b94c3ce406df62a1ba3defb594a"
+  integrity sha512-7gOsCmtTqq3NSKinO2WsYA2uC2RVcW0wlPWXsMDP3rPNoV8Ba+8+OZhfkVstCjar2Yud0RM3jwAIv/h2cLTcSA==
   dependencies:
     "@types/node" "*"
 
