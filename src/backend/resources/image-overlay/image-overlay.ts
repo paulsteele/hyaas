@@ -4,7 +4,7 @@ import * as fs from 'fs';
 
 const DEFAULT_IMAGE = 'assets/default-image.jpg';
 
-const serveImage = (requestUrl: string, callback: Function) => {
+const serveImage = (requestUrl: string | undefined, callback: Function) => {
   const imageMagick = gm.subClass({ imageMagick: true });
 
   let image : any;
