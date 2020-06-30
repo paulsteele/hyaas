@@ -16,7 +16,7 @@ server.get('/image', (req, res) => {
     stream.pipe(res);
   };
 
-  imageOverlay(req.query.url, callback);
+  imageOverlay(String(req.query.url), callback);
 });
 
 server.listen(8080);
