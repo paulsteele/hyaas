@@ -41,7 +41,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "concurrently": "^5.0.2",
-    "jest": "^26.1.0",
+    "jest": "^26.2.2",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5",
     "react": "^16.12.0",
